@@ -20,10 +20,18 @@ See : [doc/tf-pose-estimation.md](./doc/tf-pose-estimation.md)
 Install face-recognition
 See : [doc/face-recognition.md](./doc/face-recognition.md)
 
+### DEMO
+<object width="425" height="350">
+  <param name="movie" value="https://www.youtube.com/watch?v=iAAyuDut1Eg" />
+  <param name="wmode" value="transparent" />
+  <embed src="https://www.youtube.com/watch?v=iAAyuDut1Eg"
+         type="application/x-shockwave-flash"
+         wmode="transparent" width="425" height="350" />
+</object>
 
 ### Training model
 
-See : [doc/training.md](./doc/training.md)
+See : [doc/training.md](./README2.md)
      <p align="center"><img width="300" src="./markdown/1-Walking.png"></p>
      <p align="center"><img width="300" src="./markdown/2-Siting.png"></p>
 
