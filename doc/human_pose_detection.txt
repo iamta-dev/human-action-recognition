@@ -1,0 +1,123 @@
+1: - https://github.com/chinmayembedded/Human-Activity-Recognition
+
+https://github.com/dronefreak/human-action-classification
+
+3: - https://github.com/felixchenfy/Realtime-Action-Recognition
+
+2: - https://github.com/dakenan1/Realtime-Action-Recognition-Openpose
+
+https://github.com/ChengeYang/Human-Pose-Estimation-Benchmarking-and-Action-Recognition
+
+
+### STEP >>> 1 <<<
+git clone https://github.com/felixchenfy/Realtime-Action-Recognition
+cd Realtime-Action-Recognition
+
+conda create -n ai python=3.6 pip 
+conda activate ai | conda activate base | conda remove -n ai --all 
+conda env list
+
+pip install -r requirements.txt
+pip install jupyter tqdm
+
+pip install numpy==1.19.0 
+pip uninstall numpy 
+
+pip install tensorflow-gpu==1.5 
+sudo apt install swig
+pip install "git+https://github.com/philferriere/cocoapi.git#egg=pycocotools&subdirectory=PythonAPI"
+
+### STEP >>> 2 <<<  , Realtime-Action-Recognition/src/githubs/
+cd src/githubs/
+git clone https://github.com/ildoonet/tf-pose-estimation
+cd tf-pose-estimation
+cd models/graph/cmu
+bash download.sh
+
+cd ../../..
+cd tf_pose/pafprocess
+sudo apt install swig
+swig -python -c++ pafprocess.i && python3 setup.py build_ext --inplace
+
+
+
+
+### TEST VDO , IMG , CAMARA
+python src/s5_test.py \
+    --model_path model/trained_classifier.pickle \
+    --data_type video \
+    --data_path data_test/test-ai.avi \
+    --output_folder output
+
+python src/s5_test.py \
+    --model_path model/trained_classifier.pickle \
+    --data_type video \
+    --data_path data_test/exercise.avi \
+    --output_folder output
+
+python src/s5_test.py \
+    --model_path model/trained_classifier.pickle \
+    --data_type folder \
+    --data_path data_test/test-ai/ \
+    --output_folder output
+
+data_test/test-ai.avi
+
+
+
+python run_webcam.py --camera=./dance.mp4
+python run_webcam.py --camera=./exercise.avi
+
+### VDO2IMG
+python ./tools/video2images.py -i=./data_train/17-12-20/test-ai.avi -o=./data_train/jpg -s=1
+
+
+python ./tools/video2images.py -i=./data_train/17-12-20/raiseOneHand_17-12-20-15-30-001.avi -o=./data/source_images1/raiseOneHand_17-12-20-15-30-001 
+python ./tools/video2images.py -i=./data_train/17-12-20/raiseOneHand_17-12-20-15-30-002.avi -o=./data/source_images1/raiseOneHand_17-12-20-15-30-002 
+python ./tools/video2images.py -i=./data_train/17-12-20/reading_17-12-20-15-30-001.avi -o=./data/source_images1/reading_17-12-20-15-30-001 
+python ./tools/video2images.py -i=./data_train/17-12-20/reading_17-12-20-15-30-002.avi -o=./data/source_images1/reading_17-12-20-15-30-002 
+python ./tools/video2images.py -i=./data_train/17-12-20/siting_17-12-20-15-30-001.avi -o=./data/source_images1/siting_17-12-20-15-30-001 
+python ./tools/video2images.py -i=./data_train/17-12-20/siting_17-12-20-15-30-002.avi -o=./data/source_images1/siting_17-12-20-15-30-002 
+python ./tools/video2images.py -i=./data_train/17-12-20/sleeping_17-12-20-15-30-001.avi -o=./data/source_images1/sleeping_17-12-20-15-30-001 
+python ./tools/video2images.py -i=./data_train/17-12-20/sleeping_17-12-20-15-30-002.avi -o=./data/source_images1/sleeping_17-12-20-15-30-002 
+python ./tools/video2images.py -i=./data_train/17-12-20/standing_17-12-20-15-30-001.avi -o=./data/source_images1/standing_17-12-20-15-30-001 
+python ./tools/video2images.py -i=./data_train/17-12-20/standing_17-12-20-15-30-002.avi -o=./data/source_images1/standing_17-12-20-15-30-002 
+python ./tools/video2images.py -i=./data_train/17-12-20/standing_17-12-20-15-30-003.avi -o=./data/source_images1/standing_17-12-20-15-30-003 
+python ./tools/video2images.py -i=./data_train/17-12-20/writing_17-12-20-15-30-001.avi -o=./data/source_images1/writing_17-12-20-15-30-001 
+python ./tools/video2images.py -i=./data_train/17-12-20/writing_17-12-20-15-30-002.avi -o=./data/source_images1/writing_17-12-20-15-30-002 
+
+### PNG2JPG
+python ./tools/png2jpgs.py -i=./data_train/png -o=./data_train/jpg -s=True
+
+### d5tod8
+python ./tools/d5tod8.py -i=./data_train/jpg -o=./data_train/out8d -s=True
+
+classes: ['walking', 'siting', 'standing', 'sleeping', 'reading', 'writing', 'raiseOneHand']
+
+1: walking - เดิน walking_17-12-20-15-30-00
+2: siting - นั่ง siting_17-12-20-15-30-00
+3: standing - ยืน standing_17-12-20-15-30-00
+4: sleeping - นอน sleeping_17-12-20-15-30-00
+5: reading - อ่านหนังสือ reading_17-12-20-15-30-00
+6: writing - เขียนหนังสือ writing_17-12-20-15-30-00
+7: raiseOneHand - ยกมือ 1 ข้าง raiseOneHand_17-12-20-15-30-00
+
+##raiseTwoHand - ยกมือ 2 ข้าง raiseTwoHand_17-12-20-15-30-00
+
+### TRAINNING MODEL
+python src/s1_get_skeletons_from_training_imgs.py
+python src/s2_put_skeleton_txts_to_a_single_txt.py
+python src/s3_preprocess_features.py
+python src/s4_train.py
+
+
+
+
+
+
+
+
+
+
+
+
