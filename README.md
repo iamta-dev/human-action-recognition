@@ -21,7 +21,7 @@ Install face-recognition
 See : [doc/face-recognition.md](./doc/face-recognition.md)
 
 ### DEMO
-[![IMAGE ALT TEXT](https://www.youtube.com/watch?v=iAAyuDut1Eg/0.jpg)](https://www.youtube.com/watch?v=iAAyuDut1Eg "DEMO APP")
+[![./markdown/DEMO.png](https://www.youtube.com/watch?v=iAAyuDut1Eg/0.jpg)](https://www.youtube.com/watch?v=iAAyuDut1Eg "DEMO APP")
 
 ### Training model
 
