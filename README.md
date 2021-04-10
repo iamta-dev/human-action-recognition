@@ -21,13 +21,7 @@ Install face-recognition
 See : [doc/face-recognition.md](./doc/face-recognition.md)
 
 ### DEMO
-<object width="425" height="350">
-  <param name="movie" value="https://www.youtube.com/watch?v=iAAyuDut1Eg" />
-  <param name="wmode" value="transparent" />
-  <embed src="https://www.youtube.com/watch?v=iAAyuDut1Eg"
-         type="application/x-shockwave-flash"
-         wmode="transparent" width="425" height="350" />
-</object>
+[![IMAGE ALT TEXT](https://www.youtube.com/watch?v=iAAyuDut1Eg/0.jpg)](https://www.youtube.com/watch?v=iAAyuDut1Eg "DEMO APP")
 
 ### Training model
 
