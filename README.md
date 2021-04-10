@@ -8,7 +8,7 @@
 
 ### Package Install
 
-# add file
+add file
 human-action-recognition/src/githubs/tf-pose-estimation
 human-action-recognition/model
 human-action-recognition/data_test/tast-01.mp4
