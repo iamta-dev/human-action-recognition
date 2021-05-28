@@ -6,6 +6,9 @@
 ตรวจจับครูและนักเรียน ไม่ว่าจะเป็น การกระทําต่างๆ ความสนใจเรียน อารมรณ์อื่นๆ โดนใช้ AI ภายในห้องเรียน
 แล้วมาประมวลผลเพื่อช่วยนําข้อมูลที่ได้มาปรับพัฒนาการสอนในตรงจุดแก่นักเรียนมากขึ้น
 
+### Project details 
+https://bit.ly/3ibz9Rx
+
 ### Package Install
 
 add file
@@ -34,8 +37,6 @@ See : [doc/face-recognition.md](./doc/face-recognition.md)
 ### Training model
 
 See : [doc/training.md](./README2.md)
-     <p align="center"><img width="300" src="./markdown/1-Walking.png"></p>
-     <p align="center"><img width="300" src="./markdown/2-Siting.png"></p>
 
 ### Test - AI  
 ```
